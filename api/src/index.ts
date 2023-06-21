@@ -1,10 +1,15 @@
-import fastify from 'fastify'
+import Fastify from 'fastify'
+import cors from '@fastify/cors'
 
-const server = fastify()
+const fastify = Fastify({
+  logger: true
+})
 
-server.listen({ port: 8080 }, (err: any, address:any) => {
-  if (err) {
-    console.error(err)
-  }
-  console.log(`Server listening at ${address}`)
+fastify.register(cors)
+
+fastify.listen({ port: 3001 }, function (err, address) {
+    if (err) {
+      fastify.log.error(err)
+      process.exit(1)
+    }
 })
