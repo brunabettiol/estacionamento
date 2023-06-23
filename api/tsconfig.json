@@ -1,13 +1,14 @@
 {
     "compilerOptions": {
-        "outDir": "dist/js",
-        "target": "es2016",
+        "outDir": "dist",
+        "module": "commonjs",
         "noEmitOnError": true,
         "noImplicitAny": true,
         "removeComments": true,
         "strictNullChecks": true,
         "experimentalDecorators": true,
-        "moduleResolution":"node"
+        "moduleResolution":"node",
+        "esModuleInterop": true
     },
     "include": ["src/**/*"]
 }
